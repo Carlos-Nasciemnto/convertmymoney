@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 })
 app.get('/cotacao', (req, res) => {
     const { cotacao, quantidade } = req.query
+    
     if(cotacao && quantidade){
         const conversao = convert.convert(cotacao, quantidade)
             res.render('cotacao', {
