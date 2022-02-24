@@ -2,9 +2,27 @@
 <%- include('header') %>
 
 <form method="GET" action="/cotacao">
-    <input name="cotacao" placeholder="Cotação do dolar" value="<%= cotacao %>"><br>
-    <input name="quantidade" placeholder="Quantidade de dolares"><br>
-    <button>Convert!</button>
+    <div class="position-absolute top-25 start-25">
+            <input class="position-absolute" id="cot" name="cotacao" placeholder="Cotação do dolar" value="<%= cotacao %>"><br>
+            <input name="quantidade" placeholder="Quantidade de dolares"><br>
+            <button class="p-2 mb-2 bg-primary text-white">Convert!</button>
+    </div>
 </form>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){
+        $('#cot').blur(function() {
+            
+            if $(({'#cot' === ''})){
+                alert('Digite o valor da cotação!')
+
+            }if(quantidade === ''){
+
+                alert('Digite o valor da quantidade!')
+            }
+
+        })
+    })
+</script>
 
 <%- include('footer') %>
